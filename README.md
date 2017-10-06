@@ -24,6 +24,6 @@
 
 ![image](https://github.com/shiyafeng/foolqq/blob/master/pic4.jpg)
 
-4 最后请不要使用QQ的合并窗口功能，如果你有多个群，将他们平铺在桌面上，这样foolqq可以监控多个群面板、并保证使用enter键可以发送消息而不是enter+ctrl，关闭多彩气泡功能。
+4 最后请不要使用QQ的合并窗口功能，如果你有多个群，将他们平铺在桌面上，这样foolqq可以监控多个群面板、并保证使用enter键可以发送消息而不是enter+ctrl，关闭多彩气泡功能。上述所有图片路径需要放在工程的根目录下。
 
 ![image](https://github.com/shiyafeng/foolqq/blob/master/pic5.jpg)
