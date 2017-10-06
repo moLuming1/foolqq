@@ -23,3 +23,7 @@
 关于`point.png`，我们选择红色框中的`A`字体标签，截取其中间的横线部分，如下图红色区域所示，务必保证截图中不要包含背景的任何一个像素，这么做的原因是，QQ的背景面板颜色会根据窗口大小、当前群的头像进行渐变色计算，为了提供公共可用的识别点，我们使用下图红色区域的部分。
 
 ![image](https://github.com/shiyafeng/foolqq/blob/master/pic4.jpg)
+
+4 最后请不要使用QQ的合并窗口功能，如果你有多个群，将他们平铺在桌面上，这样foolqq可以监控多个群面板、并保证使用enter键可以发送消息而不是enter+ctrl，关闭多彩气泡功能。
+
+![image](https://github.com/shiyafeng/foolqq/blob/master/pic5.jpg)
