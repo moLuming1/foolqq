@@ -64,7 +64,7 @@ robot...
 
 # interval与checkInterval
 
-context提供setInterval来设置一系列操作的间隔时间，如双击后等待interval按键，这是一个细粒度的时间控制，目的是给显卡一个缓冲，我们知道电脑操作过快可能会导致无法响应，默认是200ms，而checkInterval是一个完整的周期时间，如果你有3个群，应保证checkInterval大于读取并处理完这3个群的消息所耗的总时间。
+context提供setInterval来设置一系列操作的间隔时间，如双击后等待interval按键，这是一个细粒度的时间控制，目的是给显卡一个缓冲，我们知道电脑操作过快可能会导致无法响应，默认是200ms，而checkInterval是一个完整的周期时间，如果你有3个群，应保证checkInterval大于读取并处理完这3个群的消息所耗的总时间，默认是5秒。
 
 # 场景
 
