@@ -14,4 +14,4 @@
 
 打开你要监控的群或讨论组，截取群或讨论组的头像，截取的范围不要超出头像的范围，如下红色框中范围差不多即可。将截取后的图像另存为png格式，截取后的图像不能有压缩，并为图片起个英文名字（如下是gj.png），这个名字很重要，对foolqq而言，相当于当前群的id。
 
-![image](https://github.com/shiyafeng/foolqq/blob/master/pic2.png)
+![image](https://github.com/shiyafeng/foolqq/blob/master/pic2.jpg)
