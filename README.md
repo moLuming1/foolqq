@@ -28,15 +28,20 @@
 
 ![image](https://github.com/shiyafeng/foolqq/blob/master/pic5.jpg)
 
+# 用法
+
 ```
-	public static void main(String[] args) throws AWTException, IOException, NativeHookException {
-		
-		BaseQQWindowContext context=new BaseQQWindowContext(new File("point.png")) {
-			@Override
-			public void onMessage(String name, QQMsg msg) {
-				System.out.println(msg);
-			}
-		};
+public static void main(String[] args) throws AWTException, IOException, NativeHookException {
+//创建BaseQQWindowContext的实例、传入之前做好的point.png文件
+BaseQQWindowContext context=new BaseQQWindowContext(new File("point.png")) {
+	@Override
+	public void onMessage(String name, QQMsg msg) {
+	
+        //name是图片名称(不包括扩展名),对前面提到的gj.png图片而言这里name就是gj，因此可以根据name判断到底是哪个群的消息
+	
+	System.out.println(msg);   //msg包括内容、发送人QQ、昵称、时间
 	}
+};
+}
   
   ```
