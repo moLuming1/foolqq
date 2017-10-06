@@ -17,3 +17,7 @@
 ![image](https://github.com/shiyafeng/foolqq/blob/master/pic2.jpg)
 
 3 经过步骤2，foolqq可以找到qq对话框，接下来需要找到输入和输出的位置，如下图所示，工具栏之上的部分是输出，下方是我们的输入，由于qq会话窗口可以自定义大小且工具栏也可以上下拖动，因此对不同用户而言，窗口的位置信息是不一定的，因此，我们需要一张关键图片来描述输入和输出的位置，且这张图片的名字必须是`point.png`
+
+![image](https://github.com/shiyafeng/foolqq/blob/master/pic3.jpg)
+
+关于`point.png`，我们选择红色框中的`A`字体标签，截取其中间的横线部分
