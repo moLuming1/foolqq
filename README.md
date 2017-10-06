@@ -32,7 +32,9 @@
 
 ```
 public static void main(String[] args) throws AWTException, IOException, NativeHookException {
+
 //创建BaseQQWindowContext的实例、传入之前做好的point.png文件
+
 BaseQQWindowContext context=new BaseQQWindowContext(new File("point.png")) {
 	@Override
 	public void onMessage(String name, QQMsg msg) {
@@ -45,3 +47,17 @@ BaseQQWindowContext context=new BaseQQWindowContext(new File("point.png")) {
 }
   
   ```
+  
+  # 全局锁——BaseQQWindowContext
+
+你可能注意到了，我们操作的鼠标和键盘是特殊共享资源，如果需要在另一个线程中使用robot类进行自定义操作，可能和foolqq的内部方法冲突，而我们上一步创建的context对象可以作为锁，避免冲突。
+
+```
+//如果你需要使用robot类，你的代码必须是这样
+
+synchronized(context){
+robot...
+
+}
+
+```
