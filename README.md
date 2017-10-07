@@ -66,6 +66,16 @@ robot...
 
 context提供setInterval来设置一系列操作的间隔时间，如双击后等待interval按键，这是一个细粒度的时间控制，目的是给显卡一个缓冲，我们知道电脑操作过快可能会导致无法响应，默认是200ms，而checkInterval是一个完整的周期时间，如果你有3个群，应保证checkInterval大于读取并处理完这3个群的消息所耗的总时间，默认是5秒。
 
+
+# writeQQMsg
+
+context的writeQQMsg可以向指定群写入消息，并且是线程安全的，使用这个方法的缘由一定是定时执行任务，比如定时向群里推送消息，而这个功能对于以往的smartqq而言是非常奢侈的，因为smartqq需要不定时的重启。writeQQMsg有两个String类型参数，前者是图片的名称，上文中是`gj`,后者则是消息内容。
+
+```
+context.writeQQMsg("gj","大家好啊");
+```
+
+
 # 退出
 
 robot类控制着你的鼠标和键盘，如果想要退出程序，请使用ESC键，这个功能能用java实现，得益于[jnativehook](https://github.com/kwhat/jnativehook)
