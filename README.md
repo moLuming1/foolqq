@@ -68,7 +68,7 @@ context提供setInterval来设置一系列操作的间隔时间，如双击后�
 
 # 退出
 
-robot类控制着你的鼠标和键盘，如果想要退出程序，请使用ESC键，这个功能能用java实现，得益于jnativehook
+robot类控制着你的鼠标和键盘，如果想要退出程序，请使用ESC键，这个功能能用java实现，得益于[jnativehook](https://github.com/kwhat/jnativehook)
 
 # 场景
 
