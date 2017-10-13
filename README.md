@@ -72,7 +72,9 @@ context提供setInterval来设置一系列操作的间隔时间，如双击后�
 context的writeQQMsg可以向指定群写入消息，并且是线程安全的，使用这个方法的缘由一定是定时执行任务，比如定时向群里推送消息，而这个功能对于以往的smartqq而言是非常奢侈的，因为smartqq需要不定时的重启。writeQQMsg有两个String类型参数，前者是图片的名称，上文中是`gj`,后者则是消息内容。
 
 ```
-context.writeQQMsg("gj","大家好啊");
+context.writeQQMsg("gj","大家好啊"); //发送文本
+context.writeQQMsg("gj",new File("d:/img/logo.jpg"));  //发图片
+
 ```
 
 
