@@ -74,7 +74,6 @@ context的writeQQMsg可以向指定群写入消息，并且是线程安全的，
 ```
 context.writeQQMsg("gj","大家好啊"); //发送文本
 context.writeQQMsg("gj",new File("d:/img/logo.jpg"));  //发图片
-
 ```
 
 
