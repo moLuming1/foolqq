@@ -13,29 +13,29 @@ import javax.imageio.ImageIO;
 import foolqq.BaseQQWindowContext;
 import foolqq.model.QQMsg;
 import foolqq.model.QQWindow;
-import foolqq.tool.QQWindowTool;
+import static foolqq.tool.QQWindowTool.*;
 
 public class WindowHandleTask implements Runnable {
 
 	private BaseQQWindowContext context;
 
 	private Map<String, QQWindow> map;
-	
+
 	private Robot robot;
-	
+
 	private static String msgHeadRegExp = "(.*)\\((.+)\\)\\s+([0-9]{1,2}:[0-9]{2}:[0-9]{2})";
 
-	public WindowHandleTask(BaseQQWindowContext context,Map<String, QQWindow> map,Robot robot) {
+	public WindowHandleTask(BaseQQWindowContext context, Map<String, QQWindow> map, Robot robot) {
 		this.context = context;
-	    this.map=map;
-	    this.robot=robot;
+		this.map = map;
+		this.robot = robot;
 	}
 
 	@Override
 	public void run() {
 		synchronized (context) {
 			map.clear();
-			BufferedImage image = QQWindowTool.getScreen(robot);
+			BufferedImage image = getScreen(robot);
 			int width = image.getWidth();
 			int height = image.getHeight();
 			File[] f = new File(".").listFiles();
@@ -48,12 +48,12 @@ public class WindowHandleTask implements Runnable {
 						e.printStackTrace();
 					}
 
-					String name = QQWindowTool.getImgName(f[i].getName());
+					String name = getImgName(f[i].getName());
 					QQWindow win = new QQWindow(name, img);
 
 					for (int x = 10; x < width - 200; ++x) {
 						for (int y = 10; y < height - 200; ++y) {
-							if (QQWindowTool.isEqual(x, y, image, img)) {
+							if (isEqual(x, y, image, img)) {
 								win.setX(x);
 								win.setY(y);
 								break;
@@ -83,7 +83,7 @@ public class WindowHandleTask implements Runnable {
 	private List<QQMsg> getMsgStack(String[] msgs) {
 
 		List<QQMsg> stack = new ArrayList<QQMsg>();
-		for (int j = 0; j < msgs.length; j++) { 
+		for (int j = 0; j < msgs.length; j++) {
 			if (msgs[j].matches(msgHeadRegExp)) {
 				Pattern pat = Pattern.compile(msgHeadRegExp);
 				Matcher mat = pat.matcher(msgs[j]);
