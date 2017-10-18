@@ -21,8 +21,8 @@ import foolqq.listener.GlobalKeyListener;
 import foolqq.model.QQMsg;
 import foolqq.model.QQWindow;
 import foolqq.task.WindowHandleTask;
-import foolqq.tool.ClipboardTool;
-import foolqq.tool.QQWindowTool;
+import static foolqq.tool.ClipboardTool.*;
+import static foolqq.tool.QQWindowTool.*;
 
 public abstract class BaseQQWindowContext {
 
@@ -73,11 +73,11 @@ public abstract class BaseQQWindowContext {
 		int y = map.get(name).getY();
 		if (x == 0 || y == 0)
 			return null;
-		BufferedImage image = QQWindowTool.getScreen(robot);
+		BufferedImage image = getScreen(robot);
 		int height = image.getHeight();
 		for (int i = x - 100; i < x + 200; ++i) {
 			for (int j = y + 100; j < height - 100; ++j) {
-				if (QQWindowTool.isEqual(i, j, image, pImage)) {
+				if (isEqual(i, j, image, pImage)) {
 					robot.mouseMove(i + 150, j - 100);
 					robot.delay(interval);
 					robot.mousePress(InputEvent.BUTTON1_MASK);
@@ -91,7 +91,7 @@ public abstract class BaseQQWindowContext {
 					robot.keyRelease(KeyEvent.VK_C);
 					robot.keyRelease(KeyEvent.VK_CONTROL);
 					robot.delay(interval);
-					return ClipboardTool.getSystemClipboard();
+					return getSystemClipboard();
 				}
 			}
 		}
@@ -103,18 +103,18 @@ public abstract class BaseQQWindowContext {
 		int y = map.get(name).getY();
 		if (x == 0 || y == 0)
 			return;
-		BufferedImage image = QQWindowTool.getScreen(robot);
+		BufferedImage image = getScreen(robot);
 		int height = image.getHeight();
 		for (int i = x - 100; i < x + 200; ++i) {
 			for (int j = y + 100; j < height - 100; ++j) {
-				if (QQWindowTool.isEqual(i, j, image, pImage)) {
+				if (isEqual(i, j, image, pImage)) {
 					robot.mouseMove(i + 150, j + 50);
 					robot.delay(interval);
 					robot.mousePress(InputEvent.BUTTON1_MASK);
 					robot.mouseRelease(InputEvent.BUTTON1_MASK);
 					robot.delay(interval);
 					if (msg instanceof String) {
-						ClipboardTool.setSysClipboardText((String) msg);
+						setSysClipboardText((String) msg);
 					} else if (msg instanceof File) {
 						Image imgObj = null;
 						try {
@@ -122,10 +122,10 @@ public abstract class BaseQQWindowContext {
 						} catch (IOException e) {
 							e.printStackTrace();
 						}
-						ClipboardTool.setClipboardImage(imgObj);
+						setClipboardImage(imgObj);
 
 					} else if (msg instanceof Image) {
-						ClipboardTool.setClipboardImage((Image) msg);
+						setClipboardImage((Image) msg);
 					}
 
 					robot.keyPress(KeyEvent.VK_CONTROL);
