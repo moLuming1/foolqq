@@ -30,7 +30,7 @@
 
 # 用法
 
-```
+```Java
 public static void main(String[] args) throws AWTException, IOException, NativeHookException {
 
 //创建BaseQQWindowContext的实例、传入之前做好的point.png文件
