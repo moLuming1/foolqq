@@ -52,7 +52,7 @@ BaseQQWindowContext context=new BaseQQWindowContext(new File("point.png")) {
 
 你可能注意到了，我们操作的鼠标和键盘是特殊共享资源，如果需要在另一个线程中使用robot类进行自定义操作，可能和foolqq的内部方法冲突，而我们上一步创建的context对象可以作为锁，避免冲突。
 
-```
+```Java
 //如果你需要使用robot类，你的代码必须是这样
 
 synchronized(context){
@@ -71,7 +71,7 @@ context提供setInterval来设置一系列操作的间隔时间，如双击后�
 
 context的writeQQMsg可以向指定群写入消息，并且是线程安全的，使用这个方法的缘由一定是定时执行任务，比如定时向群里推送消息，而这个功能对于以往的smartqq而言是非常奢侈的，因为smartqq需要不定时的重启。writeQQMsg有两个String类型参数，前者是图片的名称，上文中是`gj`,后者则是消息内容。
 
-```
+```Java
 context.writeQQMsg("gj","大家好啊"); //发送文本
 context.writeQQMsg("gj",new File("d:/img/logo.jpg"));  //发图片
 ```
@@ -96,7 +96,7 @@ foolqq面向桌面的会话窗口，对一台电脑而言，根据分辨率不�
 # 常见问题
 
 问题大多数是由于截取的图片不够清晰，导致无法识别，你可以使用ImgChkHelper类的validImage方法来判断图片是否有效(若有效则返回true)
-```
+```Java
 ImgChkHelper.validImage(printscreen截屏的路径,你截取的局部图片路径);
 ```
 
