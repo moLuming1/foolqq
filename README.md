@@ -99,6 +99,7 @@ foolqq面向桌面的会话窗口，对一台电脑而言，根据分辨率不�
 ```Java
 ImgChkHelper.validImage(printscreen截屏的路径,你截取的局部图片路径);
 ```
+不要使用QQ截图，建议使用Photoshop，如果不是那么专业，推荐使用光影魔术手，并另存为质量为100%的图像。
 
 # 写在最后
 
