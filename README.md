@@ -3,7 +3,7 @@
 目前读写QQ的机器人都是基于爬虫分析smartqq报文来实现的，然而smartqq腾讯已经下线，foolqq应运而生！
 
 ![image](https://github.com/shiyafeng/foolqq/blob/master/cap_hat_poker_128px_4073_easyicon.net.png)
-
+ 
 ### 原理概述
 
 定时截取屏幕，并识别图片关键点像素，确定群会话窗口的位置，并通过剪贴板实现JVM消息和屏幕消息的交换。通过Robot类操作鼠标和键盘。
