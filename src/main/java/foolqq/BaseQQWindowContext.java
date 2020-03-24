@@ -25,7 +25,7 @@ import static foolqq.tool.ClipboardTool.*;
 import static foolqq.tool.QQWindowTool.*;
 
 public abstract class BaseQQWindowContext {
-
+ 
 	private Map<String, QQWindow> map = new HashMap<String, QQWindow>();
 
 	private Robot robot;
