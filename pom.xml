@@ -5,7 +5,7 @@
 	<artifactId>foolqq</artifactId>
 	<packaging>jar</packaging>
 	<version>1.2</version>
-
+ 
 	<dependencies>
 		<dependency>
 			<groupId>com.1stleg</groupId>
