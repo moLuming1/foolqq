@@ -1,4 +1,4 @@
-# 基于图像处理操作QQ的工具foolqq  
+# 基于图像处理操作QQ的工具foolqq   
  
 目前读写QQ的机器人都是基于爬虫分析smartqq报文来实现的，然而smartqq腾讯已经下线，foolqq应运而生！
 
